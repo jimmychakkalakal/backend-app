@@ -1,0 +1,30 @@
+{
+  "iss": "http://localhost:8085/realms/myrealm",
+  "sub": "886efb4c-5018-49a5-9855-91e320d1f1c4",
+  "typ": "Bearer",
+  "azp": "frontend-keycloak-confidential",
+  "allowed-origins": [
+    "http://localhost:8081"
+  ],
+  "realm_access": {
+    "roles": [
+      "offline_access",
+      "uma_authorization"
+    ]
+  },
+  "resource_access": {
+    "account": {
+      "roles": [
+        "manage-account",
+        "manage-account-links",
+        "view-profile"
+      ]
+    }
+  },
+  "scope": "openid profile email",
+  "email_verified": true,
+  "name": "test",
+  "preferred_username": "test",
+  "family_name": "test",
+  "email": "test@testmail.com"
+}

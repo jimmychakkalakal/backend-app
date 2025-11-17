@@ -15,8 +15,8 @@ import java.util.Map;
 @RequestMapping("/api/")
 public class CalendarController {
 
-    @GetMapping("/calender")
-    @PreAuthorize("hasAuthority('ROLE_my-role')")
+    @GetMapping("v1/calender")
+    @PreAuthorize("hasAuthority('my-role')")
     public List<Map<String, Object>> getCalendar(@AuthenticationPrincipal Jwt jwt) {
         String username = jwt.getClaimAsString("preferred_username");
         return List.of(
