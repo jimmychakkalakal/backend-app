@@ -26,12 +26,40 @@
       "username": "demo",
       "firstName": "demo",
       "lastName": "demo",
-      "email":"somemail@gmail.com",
+      "email": "somemail@gmail.com",
       "enabled": true,
       "emailVerified": true,
-      "credentials": [{ "type": "password", "value": "password" }],
-      "realmRoles": ["my-role"]
-
+      "credentials": [
+        {
+          "type": "password",
+          "value": "password"
+        }
+      ],
+      "realmRoles": [
+        "default-roles-myrealm",
+        "my-role",
+        "offline_access",
+        "uma_authorization"
+      ]
+    },
+    {
+      "username": "igor",
+      "firstName": "igor",
+      "lastName": "igor",
+      "email": "igor@gmail.com",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "password"
+        }
+      ],
+      "realmRoles": [
+        "default-roles-myrealm",
+        "offline_access",
+        "uma_authorization"
+      ]
     }
   ]
 }
