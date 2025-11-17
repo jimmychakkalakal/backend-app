@@ -24,13 +24,13 @@ class CalendarControllerTest {
     @Test
     @WithAnonymousUser
     void testGetCalendarReturns401() throws Exception {
-        mockMvc.perform(get("/api/v1/calender")).andExpect(status().isUnauthorized());
+        mockMvc.perform(get("/api/v1/calendar")).andExpect(status().isUnauthorized());
     }
 
     @Test
     @WithJwt("demo.json")
     void testGetCalendarReturnsEvents() throws Exception {
-        mockMvc.perform(get("/api/v1/calender")).
+        mockMvc.perform(get("/api/v1/calendar")).
                 andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].user").value("demo"))
                 .andExpect(jsonPath("$[0].event").value("Team Standup"));
@@ -39,7 +39,7 @@ class CalendarControllerTest {
     @Test
     @WithJwt("test.json")
     void testGetCalendarReturns403() throws Exception {
-        mockMvc.perform(get("/api/v1/calender")).andExpect(status().isForbidden());
+        mockMvc.perform(get("/api/v1/calendar")).andExpect(status().isForbidden());
 
     }
 }
