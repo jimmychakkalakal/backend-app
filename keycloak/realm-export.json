@@ -1,11 +1,22 @@
 {
   "realm": "myrealm",
   "enabled": true,
+  "roles": {
+    "realm": [
+      { "name": "my-role",
+        "description": "Access to frontend and calendar services",
+        "composite": false,
+        "clientRole": false
+      }
+    ]
+  },
   "clients": [
     {
       "clientId": "frontend-app",
+      "enabled": true,
       "protocol": "openid-connect",
-      "publicClient": false,
+      "publicClient": true,
+      "standardFlowEnabled": true,
       "secret": "secret",
       "redirectUris": ["http://localhost:8080/*"],
       "webOrigins": ["http://localhost:8080"],
@@ -13,14 +24,8 @@
       "optionalClientScopes": ["address", "phone"],
       "directAccessGrantsEnabled": true,
       "serviceAccountsEnabled": true
-
     }
   ],
-  "roles": {
-    "realm": [
-      { "name": "my-role", "description": "Access to frontend and calendar services" }
-    ]
-  },
   "users": [
     {
       "username": "demo",
