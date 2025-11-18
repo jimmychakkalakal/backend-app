@@ -12,6 +12,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
 
+import javax.swing.undo.AbstractUndoableEdit;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -33,8 +34,9 @@ public class SecurityConfig {
                     httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
                 })
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth ->
-                        auth.anyRequest().authenticated()
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/v1/calendar").authenticated()
+                        .anyRequest().denyAll()
                 );
 
         return http.build();

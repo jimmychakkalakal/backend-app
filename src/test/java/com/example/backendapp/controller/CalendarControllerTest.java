@@ -40,6 +40,11 @@ class CalendarControllerTest {
     @WithJwt("test.json")
     void testGetCalendarReturns403() throws Exception {
         mockMvc.perform(get("/api/v1/calendar")).andExpect(status().isForbidden());
+    }
 
+    @Test
+    @WithJwt("demo.json")
+    void testGetUnknownEndpointReturnsE403() throws Exception {
+        mockMvc.perform(get("/api/v1/some-unknown-endpoint")).andExpect(status().isForbidden());
     }
 }
