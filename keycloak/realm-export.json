@@ -175,7 +175,10 @@
       "defaultClientScopes": ["web-origins", "roles", "profile", "email"],
       "optionalClientScopes": ["address", "phone"],
       "directAccessGrantsEnabled": true,
-      "serviceAccountsEnabled": true
+      "serviceAccountsEnabled": true,
+      "attributes": {
+        "post.logout.redirect.uris": "http://localhost:8080/logout-success"
+      }
     }
   ],
   "users": [
